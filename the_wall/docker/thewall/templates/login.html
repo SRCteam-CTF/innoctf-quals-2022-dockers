@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}The Wall Login{% endblock %}
+
+{% block content %}
+<div class="content">
+        <form method="POST" action="/login">
+            <h1><p class="center-text">Login</p></h1>
+            <br>
+            <p class="center-text">
+            <input type="text" class="input-text" placeholder="Enter the login" name="login"/>
+            <br><br>
+            <input type="password" class="input-text" placeholder="Enter the password" name="password"/>
+            <br><br>
+            <input type="submit" class="input-text" value="Login"/>
+            <br><br><br>
+            </p>
+            {% if error %}
+                <h2 type="hidden" style="color: red"><p class="center-text">{{ error }}</p></h6>
+            {% endif %}
+        </form>
+</div>
+{% endblock %}

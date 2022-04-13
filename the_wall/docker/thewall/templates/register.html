@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}The Wall Register{% endblock %}
+
+{% block content %}
+<div class="content">
+        <form method="POST" action="/register">
+            <h1><p class="center-text">Registration</p></h1>
+            <br>
+            <p class="center-text">
+            <input type="text" class="input-text" placeholder="Enter the login" name="login"/>
+            <br><br>
+            <input type="password" class="input-text" placeholder="Enter the password" name="password1"/>
+            <br><br>
+            <input type="password" class="input-text" placeholder="Repeat password" name="password2" />
+            <br><br>
+            <input type="submit" class="input-text" value="Register"/>
+            <br><br><br>
+            </p>
+            {% if error %}
+                <h2 type="hidden" style="color: red"><p class="center-text">{{ error }}</p></h6>
+            {% endif %}
+        </form>
+</div>
+{% endblock %}

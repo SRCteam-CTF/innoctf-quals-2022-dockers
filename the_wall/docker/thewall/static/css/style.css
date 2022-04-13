@@ -1,0 +1,47 @@
+body {
+    background-image: url('/static/img/full-frame-white-brick-wall_23-2148152833.webp');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: 'Covered By Your Grace', cursive;
+    color: black;
+}
+
+.content {
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.center-text {
+    text-align: center;
+}
+
+.input-text {
+    font-size: 20px;
+}
+
+.but {
+    height: 50px;
+    width: 250px;
+    background-color: #599abd;
+    font-family: 'Covered By Your Grace', cursive;
+    font-size: 35px;
+}
+
+.input-block {
+    position: relative;
+    top: -7px;
+    height: 40px;
+    width: 300px;
+}
+
+.inline-block {
+    display: block;
+    float: left;
+}
+
+.brick {
+    position: relative;
+    height: 70px;
+    width: 20%;
+}

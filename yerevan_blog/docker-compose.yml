@@ -1,0 +1,7 @@
+version: '3'
+
+services:
+  yerevan_blog:
+    build: .
+    ports:
+      - '40006:5000'

@@ -1,0 +1,12 @@
+version: '3'
+services:
+  kazino_pwn:
+    build: ./task
+    restart: on-failure
+    ports:
+      - 1337:1337
+    deploy:
+      resources:
+        limits:
+          cpus: "1"
+          memory: "150M"

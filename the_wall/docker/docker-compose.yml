@@ -1,0 +1,20 @@
+version: '3.3'
+services:
+  mongo:
+    image: mongo:4.4.11-rc1
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=ZMDuZJB9SAD38Ctt9E8vPtsfDzW1OnKgRWwilGRsfg
+    restart: on-failure
+  web:
+    build: .
+    restart: on-failure
+    environment:
+      - SERVER_PORT=8081
+      - SERVER_HOST=0.0.0.0
+      - MONGODB_STRING=mongodb://root:ZMDuZJB9SAD38Ctt9E8vPtsfDzW1OnKgRWwilGRsfg@mongo:27017/?authMechanism=DEFAULT
+    ports:
+      - '0.0.0.0:8081:8081'
+    volumes:
+      - ./secrets:/app/secrets
+      - ./mongo_data:/data/db

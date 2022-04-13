@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Users</title>
+{% endblock %}
+
+{% block content %}
+        <script src="/static/js/popper.min.js"></script>
+        <div class="row tm-content-row tm-mt-big">
+            <div class="col-xl-8 col-lg-12 tm-md-12 tm-sm-12 tm-col mx-auto">
+                <div class="bg-white tm-block h-100">
+                    <div class="row">
+                        <div class="col-md-8 col-sm-12">
+                            <h2 class="tm-block-title d-inline-block">Users</h2>
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-hover table-striped tm-table-striped-even mt-3" id="tab1">
+                            <thead>
+                                <tr class="tm-bg-gray">
+                                    <th scope="col">&nbsp;</th>
+                                    <th scope="col">Username</th>
+                                    <th scope="col">Registration Date</th>
+                                    <th scope="col">ID</th>
+                                    <th scope="col">QR</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {%for user in users%}
+                                <tr>
+                                    <th scope="row"><input type="checkbox" aria-label="Checkbox"></th>
+                                    <td class="tm-product-name">{{user['name']}}</td>
+                                    <td>{{user['date']}}</td>
+                                    <td>{{user['id']}}</td>
+                                    <td><img src="/get_qr?uname={{user['name']}}"></td>
+                                </tr>
+                                {%endfor%}
+                            </tbody>
+                        </table>
+                    </div>
+                    <script>
+                        function regenerate(){
+                            table = document.getElementById("tab1");
+                            users = [];
+                            for (var i = 1, row; row = table.rows[i]; i++){
+                                if (row.cells[0].childNodes[0].checked){
+                                    users.push(row.cells[3].innerText);
+                                }
+                            }
+                            let xhr = new XMLHttpRequest();
+                            xhr.open("POST", "/generate_qr");
+                            xhr.setRequestHeader("Content-Type", "application/json");
+                            xhr.onreadystatechange = function () {
+                                if (xhr.readyState === 4){
+                                    window.location.reload();
+                                }
+                            };
+                            xhr.send(JSON.stringify(users));
+                        }
+                    </script>
+
+                    <div class="tm-table-mt tm-table-actions-row">
+                        <div class="tm-table-actions-col-left">
+                            <button class="btn btn-danger" onclick="regenerate()">Regenerate invite codes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+{% endblock %}

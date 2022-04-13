@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}The Wall{% endblock %}
+
+{% block content %}
+<div>
+   <input type="hidden" id="username" value="{{ username }}"/>
+   <br>
+   <div class="center-text"><input type="text" class="input-block" id="brickTextInput" /><button type="button" class="but" onclick="createBrick()">New brick</button><!--button type="button" class="but" onclick="clearBricks()">Clear</button--></div>
+   <h2 style="color: red"><p class="center-text" id="error"></p></h6>
+   {{ bricks | safe }}
+</div>
+{% endblock %}

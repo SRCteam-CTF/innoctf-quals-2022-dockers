@@ -14,3 +14,6 @@
 2. Run `docker-compose up`
 3. ?????
 4. PROFIT!
+
+Attention!!!
+Because of some unknown reasons RNG gives some strange numbers in docker

@@ -16,4 +16,4 @@
 4. PROFIT!
 
 Attention!!!
-Because of some unknown reasons RNG gives some strange numbers in docker
+Due to unknown reasons RNG in apline gives some strange numbers in docker. You can rewrite dockerfile to work with ubuntu to correct this behaviour.

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="style.css" rel="stylesheet">
+</head>
+<body class="text-center">
+
+  <form action="/api/reflect" method="post">
+  <!-- Name input -->
+  <div class="form-outline mb-4">
+    <label class="form-label" for="form4Example1">Name</label>
+    <input type="text" name="name" id="form4Example1" class="form-control" />
+  </div>
+
+  <!-- Message input -->
+  <div class="form-outline mb-4">
+    <label class="form-label" for="form4Example3">Message</label>
+    <textarea class="form-control" name="message" id="form4Example3" rows="4"></textarea>
+  </div>
+
+  <!-- Submit button -->
+  <button type="submit" class="btn btn-primary btn-block mb-4">Send</button>
+</form>
+
+</body>
+</html>
+

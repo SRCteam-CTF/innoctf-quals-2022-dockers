@@ -1,0 +1,7 @@
+version: '3.3'
+services:
+  atm:
+    build: .
+    restart: on-failure
+    ports:
+      - '8082:1337'

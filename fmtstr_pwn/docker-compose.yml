@@ -1,0 +1,12 @@
+version: '3'
+services:
+  fmtstr_pwn:
+    build: ./task
+    restart: on-failure
+    ports:
+      - 1337:1337
+    deploy:
+      resources:
+        limits:
+          cpus: "2"
+          memory: "300M"
